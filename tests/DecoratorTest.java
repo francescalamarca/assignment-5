@@ -2,6 +2,8 @@
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import question10.DecoratorPatternExample;
+
 public class DecoratorTest {
 
     public static void main(String[] args) {

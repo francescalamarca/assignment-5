@@ -1,6 +1,5 @@
 package question10;
 
-
 interface Service {
     void serve();
 }
