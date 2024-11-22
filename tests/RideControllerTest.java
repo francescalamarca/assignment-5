@@ -18,9 +18,11 @@ public class RideControllerTest {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
 
+        //create an outer class instance and tghen the inner class
+        View view = new View();
         Ride ride = new Ride("Downtown", "Airport", 25.0);
         Controller controller = new Controller(ride);
-        SmartphoneView s = new SmartphoneView();
+        SmartphoneView s = view.new SmartphoneView();
         controller.setViewStrategy(s);
         controller.showRideDetails();
 
@@ -34,9 +36,10 @@ public class RideControllerTest {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
 
+        View view = new View();
         Ride ride = new Ride("Downtown", "Airport", 25.0);
         Controller controller = new Controller(ride);
-        controller.setViewStrategy(new MobileWebView());
+        controller.setViewStrategy(view.new MobileWebView());
         controller.showRideDetails();
 
         String expectedOutput = "Mobile Web View: Ride from Downtown to Airport with fare 25.0\n";

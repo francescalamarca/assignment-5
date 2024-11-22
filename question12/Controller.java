@@ -1,18 +1,15 @@
 package question12;
 
-import question12.Ride;
-import question12.View;
-
 // Context: The Controller that decides which strategy to use
 public class Controller {
     private Ride ride;
-    private View rideView;
+    private View.RideView rideView;
 
     public Controller(Ride ride) {
         this.ride = ride;
     }
 
-    public void setViewStrategy(View rideView) {
+    public void setViewStrategy(View.RideView rideView) {
         this.rideView = rideView;
     }
 
